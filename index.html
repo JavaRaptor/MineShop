@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éditeur de Shop Minecraft</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Éditeur de Shop Minecraft</h1>
+
+    <div class="controls">
+        <label>Nombre de slots (9 → 54) :
+            <input type="number" id="slotCount" min="9" max="54" value="9">
+        </label>
+        <button id="generateGrid">Créer la grille</button>
+        <button id="exportYaml" class="btn-primary">Exporter YAML</button>
+    </div>
+
+    <div id="gridContainer"></div>
+
+    <div id="editorPanel" class="hidden">
+        <h2>Éditer le slot <span id="slotNumber"></span></h2>
+        <div class="form-group">
+            <label>Item (Material):</label>
+            <input type="text" id="itemInput" placeholder="GOLD_INGOT">
+        </div>
+        <div class="form-group">
+            <label>Nom:</label>
+            <input type="text" id="nameInput" placeholder="Nom de l'item">
+        </div>
+        <div class="form-group">
+            <label>Couleur du nom:</label>
+            <select id="colorNameInput"></select>
+        </div>
+        <div class="form-group">
+            <label>Lore:</label>
+            <input type="text" id="loreInput" placeholder="Lore">
+        </div>
+        <div class="form-group">
+            <label>Couleur du lore:</label>
+            <select id="colorLoreInput"></select>
+        </div>
+        <div class="form-group">
+            <label>Prix:</label>
+            <input type="text" id="priceInput" placeholder="50">
+        </div>
+        <div class="form-group">
+            <label>Commande:</label>
+            <input type="text" id="commandInput" placeholder="give @p diamond 1">
+        </div>
+        <div class="editor-buttons">
+            <button id="saveSlot" class="btn-primary">Sauvegarder</button>
+            <button id="closeEditor" class="btn-secondary">Fermer</button>
+        </div>
+    </div>
+
+    <pre id="yamlOutput"></pre>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
